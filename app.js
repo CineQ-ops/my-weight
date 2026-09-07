@@ -43,7 +43,7 @@ saveBtn.addEventListener('click', function() {
     };
 
     // Dodajemy wpis do tablicy
-    weightsData.push(newEntry);
+    weightsData.unshift(newEntry);
 
     // Zapisujemy całą tablicę w localStorage (zamieniając ją na tekst JSON)
     localStorage.setItem('myWeights', JSON.stringify(weightsData));

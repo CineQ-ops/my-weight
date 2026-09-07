@@ -16,7 +16,7 @@ function renderTable() {
             <td>${entry.weight} kg</td>
             <td>-</td>
             <td>-</td>
-            <td><button onclick="deleteEntry(${index})" style="background: #ff3b30; padding: 5px 10px; font-size: 14px;">Usuń</button></td>
+            <td><button class="delete-btn" onclick="deleteEntry(${index})">Usuń</button></td>
         `;
         tableBody.appendChild(newRow);
     });

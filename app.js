@@ -7,17 +7,16 @@ let weightsData = JSON.parse(localStorage.getItem('myWeights')) || [];
 
 // Funkcja, która rysuje tabelę na podstawie tablicy weightsData
 function renderTable() {
-    // Czścimy aktualną zawartość tabeli w HTML
     tableBody.innerHTML = '';
 
-    // Iterujemy po każdym wpisie w naszej tablicy
-    weightsData.forEach(entry => {
+    weightsData.forEach((entry, index) => {
         const newRow = document.createElement('tr');
         newRow.innerHTML = `
             <td>${entry.date}</td>
             <td>${entry.weight} kg</td>
             <td>-</td>
             <td>-</td>
+            <td><button onclick="deleteEntry(${index})" style="background: #ff3b30; padding: 5px 10px; font-size: 14px;">Usuń</button></td>
         `;
         tableBody.appendChild(newRow);
     });
@@ -55,3 +54,14 @@ saveBtn.addEventListener('click', function() {
     // Czścimy pole input
     weightInput.value = '';
 });
+
+function deleteEntry(index) {
+    // Usuwamy 1 element z tablicy pod danym indeksem
+    weightsData.splice(index, 1);
+
+    // Zapisujemy zaktualizowaną tablicę do localStorage
+    localStorage.setItem('myWeights', JSON.stringify(weightsData));
+
+    // Odświeżamy tabelę
+    renderTable();
+}

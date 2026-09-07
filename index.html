@@ -3,39 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Waga</title>
-    <!-- Podpięcie zewnętrznego pliku CSS -->
+    <title>Waga - Aplikacja</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h2>Waga</h2>
+    <div class="container">
+        <h2>Waga</h2>
 
-    <!-- Pole do wpisania wagi -->
-    <label for="weightInput">Dzisiejsza waga (kg):</label>
-    <input type="number" id="weightInput" step="0.1" placeholder="np. 125.0">
+        <!-- Przełącznik widoków -->
+        <div class="view-switch">
+            <button id="showDaily" class="tab-btn active">Codzienne pomiary</button>
+            <button id="showWeekly" class="tab-btn">Tygodniowe średnie</button>
+        </div>
 
-    <!-- Przyciski -->
-    <button id="saveBtn">Zapisz wagę</button>
-    <button id="avgBtn">Oblicz średnią z tygodnia</button>
+        <!-- EKRAN 1: CODZIENNY -->
+        <div id="dailyView">
+            <div class="summary-card">
+                <div id="currentWeight">Aktualna waga: -</div>
+                <div id="weeklyAvg">Ostatnia średnia z 7 dni: -</div>
+                <div id="totalChange">Całkowita zmiana: -</div>
+            </div>
+            
+            <div class="input-group">
+                <label for="weightInput">Dzisiejsza waga (kg):</label>
+                <input type="number" id="weightInput" step="0.1" placeholder="np. 125.0">
+                <button id="saveBtn">Zapisz wagę</button>
+                <button id="avgBtn">Oblicz średnią z tygodnia</button>
+            </div>
 
-    <!-- Tabela na wyniki -->
-    <table>
-        <thead>
-            <tr>
-                <th>Data</th>
-                <th>Waga</th>
-                <th>Średnia</th>
-                <th>Zmiana</th>
-                <th>Opcje</th>
-            </tr>
-        </thead>
-        <tbody id="tableBody">
-            <!-- Tutaj JavaScript będzie dopisywał wiersze -->
-        </tbody>
-    </table>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Waga</th>
+                        <th>Średnia</th>
+                        <th>Dzienna zmiana</th>
+                        <th>Opcje</th>
+                        <th>Zmiana średniej</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+        </div>
 
-    <!-- Podpięcie zewnętrznego pliku JavaScript -->
+
+
+            <!-- Przycisk zwijania/rozwijania historii -->
+            <button id="toggleHistoryBtn" class="toggle-btn hidden">Pokaż starsze wpisy</button>
+
+        <!-- EKRAN 2: TYGODNIOWE ŚREDNIE (ARCHIWUM) -->
+        <div id="weeklyView" class="hidden">
+            <h3>Archiwum średnich tygodniowych</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data zapisu</th>
+                        <th>Średnia waga</th>
+                        <th>Zmiana tygodniowa</th>
+                        <th>Opcje</th>
+                    </tr>
+                </thead>
+                <tbody id="weeklyTableBody"></tbody>
+            </table>
+        </div>
+
+    </div>
+
     <script src="app.js"></script>
 </body>
 </html>

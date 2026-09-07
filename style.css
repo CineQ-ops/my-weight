@@ -43,3 +43,56 @@ th {
     cursor: pointer;
     width: auto; /* żeby nie rozciągał się na całą szerokość jak główne przyciski */
 }
+.summary-card {
+    background-color: #f2f2f7;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.summary-card div {
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.view-switch {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 10px;
+    background: #e5e5ea;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.tab-btn.active {
+    background: #007aff;
+    color: white;
+}
+
+.toggle-btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background-color: #e5e5ea;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+}
+.toggle-btn:hover {
+    background-color: #d1d1d6;
+}

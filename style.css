@@ -1,0 +1,34 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+input, button {
+    font-size: 18px;
+    padding: 10px;
+    margin: 5px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+button {
+    background-color: #007AFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+th {
+    background-color: #f2f2f2;
+}
+.red { color: red; font-weight: bold; }
+.green { color: green; font-weight: bold; }
